@@ -1,3 +1,4 @@
+const Dotenv = require('dotenv-webpack');
 module.exports = {
   entry: ["./src/index.js"],
   output: {
@@ -18,5 +19,8 @@ module.exports = {
   },
   devServer: {
     contentBase: "./"
-  }
+  },
+  plugins: [
+    new Dotenv()
+  ]    
 };
