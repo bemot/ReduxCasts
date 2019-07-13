@@ -7,9 +7,7 @@ import VideoList from "./components/video_list";
 import VideoDetail from "./components/video_detail";
 
 
-
 const  API_KEY =  process.env.YOUTUBE_IP;
-
 
 
 class App extends Component {

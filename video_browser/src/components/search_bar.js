@@ -1,3 +1,14 @@
+// import Component as variable from React
+// it was - import React from "react"
+// very important technic
+// it is equal declaration - const Component = React.Component;
+// state - most confusing element of React
+// state is plain javascript object is used to record and React
+// to user events.
+// Each class based component has state object
+// if component changed it immediately rerenders.
+// operator "state" initialize the state object
+//
 import React, { Component } from "react";
 
 class SearchBar extends Component {
@@ -18,8 +29,7 @@ class SearchBar extends Component {
     );
   }
 
-  onInputChange(term) {
-    this.setState({ term });
+    onInputChange(term) {
     this.props.onSearchTermChange(term);
   }
 }
