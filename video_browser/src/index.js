@@ -8,7 +8,7 @@ import VideoDetail from "./components/video_detail";
 
 
 const  API_KEY =  process.env.YOUTUBE_IP;
-var rn = "2";
+var rn = "2"; //number Utube videos in search results
 
 class App extends Component {
   constructor(props) {
@@ -22,8 +22,8 @@ class App extends Component {
     this.videoSearch("smartcontracts agriculture");
   }
 
-  videoSearch(term,resultNumber) {
-    YTSearch({ key: API_KEY, term: term, resultNumber:rn }, videos => {
+  videoSearch(term) {
+    YTSearch({ key: API_KEY, term: term, resultNumber: rn}, videos => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
@@ -33,7 +33,7 @@ class App extends Component {
 
   render() {
     const videoSearch = _.debounce(term => {
-      this.videoSearch(term,rn);
+      this.videoSearch(term);
     }, 300);
 
     return (
