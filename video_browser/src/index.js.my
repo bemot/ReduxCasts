@@ -5,7 +5,7 @@ import YTSearch from "youtube-api-search";
 import SearchBar from "./components/search_bar";
 import VideoList from "./components/video_list";
 import VideoDetail from "./components/video_detail";
-//const API_KEY = "AIzaSyAuQCVeNfKhtRk9KlChQPT1nO27DPO_5Ss";
+
 
 const  API_KEY =  process.env.YOUTUBE_IP;
 
@@ -19,11 +19,11 @@ class App extends Component {
       selectedVideo: null
     };
 
-    this.videoSearch("surfboards");
+    this.videoSearch("smartcontracts agriculture");
   }
 
   videoSearch(term) {
-    YTSearch({ key: API_KEY, term: term }, videos => {
+    YTSearch({ key: API_KEY, term: term, resultNumber: "startcontracts agriculture"}, videos => {
       this.setState({
         videos: videos,
         selectedVideo: videos[0]
@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     const videoSearch = _.debounce(term => {
       this.videoSearch(term);
-    }, 10000);
+    }, 3000);
 
     return (
       <div>
@@ -49,5 +49,5 @@ class App extends Component {
   }
 }
 
+console.log(API_KEY);
 ReactDOM.render(<App />, document.querySelector(".container"));
-

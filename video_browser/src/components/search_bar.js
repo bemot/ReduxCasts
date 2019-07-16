@@ -9,6 +9,9 @@
 // if component changed it immediately rerenders.
 // operator "state" initialize the state object
 //
+// import React, { Component } from "react";
+// we receive oll functionality from facebook Componen 
+// by declaring the class - SearchBar
 import React, { Component } from "react";
 
 class SearchBar extends Component {
@@ -29,9 +32,11 @@ class SearchBar extends Component {
     );
   }
 
-    onInputChange(term) {
+  onInputChange(term) {
+    this.setState({ term });
     this.props.onSearchTermChange(term);
   }
 }
 
 export default SearchBar;
+
